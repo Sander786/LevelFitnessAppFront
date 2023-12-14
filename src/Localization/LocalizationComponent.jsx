@@ -1,9 +1,26 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
+import styled from 'styled-components';
 
 import { Languages } from "./Languages/Languages";
 
 const Values = Languages.LocalizationButtons();
+
+const StyledButton = styled.button`
+  font-size: 18px;
+  margin: 5px;
+  padding: 7px;
+  cursor: pointer;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: #E7490F;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 14px;
+  }
+`;
 
 export const LocalizationComponent = ({ handleLangChange }) => {
     const [activeId, setActiveId] = useState(1);
@@ -16,22 +33,18 @@ export const LocalizationComponent = ({ handleLangChange }) => {
     return (
         <section className="Localization" style={{}}>
             {Values.map(({ id, text, textId }) => (
-                <button
+                <StyledButton
                     key={textId}
                     onClick={() => handleClick(id, textId)}
                     style={{
-                        margin: "5px",
-                        padding: "10px",
-                        fontSize: "20px",
                         backgroundColor: activeId === id ? "#E7490F" : "#fff",
                         color: activeId === id ? "#fff" : "#000",
-                        borderRadius: "5px"
                     }}
                     className={
                         activeId === id ? "activeLanguage" : "inactiveLanguage"
                     }>
                     {text}
-                </button>
+                </StyledButton>
             ))}
         </section>
     );

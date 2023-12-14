@@ -8,21 +8,59 @@ import InteriorImage5 from "../images/interior/05Interior.png";
 import InteriorImage6 from "../images/interior/06Interior.png";
 
 const InteriorHover = styled.section`
-background-color: #fff;
-color: #000;
-display: flex;
-flex-direction: column;
-align-items: flex-start; 
-padding: 50px 100px 50px; 
+  background-color: #fff;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  padding: 50px 100px; 
+
+  @media (max-width: 1200px) {
+    padding: 25px 50px;
+  }
+
+  @media (max-width: 1000px) {
+    padding: 25px;
+  }
+
+  @media (max-width: 400px) {
+    padding: 5px;
+  }
 `;
 
 const ImagesSection = styled.section`
-display: flex;
-flex-wrap: wrap;
-align-items: center; 
-justify-content: space-around;
-margin-top: 15px;
-// padding: 50px 100px 50px; 
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center; 
+  justify-content: space-around;
+  margin-top: 15px;
+  padding: 50px 100px;
+  
+  @media (max-width: 1200px) {
+    padding: 25px 50px;
+  }
+
+  @media (max-width: 1000px) {
+    padding: 20px;
+  }
+
+  @media (max-width: 400px) {
+    padding: 0;
+  }
+`;
+
+const BasicBigP = styled.p`
+  font-weight: bold;
+  font-size: 36px;
+  margin-bottom: 15px;
+
+  @media (max-width: 1000px) {
+    font-size: 30px;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 20px;
+  }
 `;
 
 
@@ -30,7 +68,7 @@ export const Interior = ({selectedLang, Languages}) => {
     const Values = Languages.Interior()[selectedLang];
     return (
         <InteriorHover>
-            <h1 style={{fontSize: "36px", marginBottom:"15px"}}>{Values[0].InteriorTitle}</h1>
+            <BasicBigP>{Values[0].InteriorTitle}</BasicBigP>
             <ImagesSection>
                 <ImageComponent interiorImg={InteriorImage1}/>
                 <ImageComponent interiorImg={InteriorImage3}/>
@@ -44,9 +82,19 @@ export const Interior = ({selectedLang, Languages}) => {
     
 };
 
+const StyledImg = styled.img`
+  margin: 15px 0px;
+
+  @media (max-width: 400px) {
+    height: 200px;
+    width: auto;
+  }
+`;
+
+
 const ImageComponent = ({interiorImg}) => {
     return (
-        <img style={{margin: "15px 0px"}} src={interiorImg} alt="Interior image" />
+        <StyledImg src={interiorImg} alt="Interior image" />
     );
 }
 

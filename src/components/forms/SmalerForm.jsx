@@ -4,7 +4,7 @@ import emailjs from "@emailjs/browser";
 import styled from 'styled-components';
 
 const FormP = styled.p`
-  margin: 10px 0;
+margin: 10px 0;
 `;
 
 const StyledForm = styled.form`
@@ -50,7 +50,7 @@ const RedP = styled.p`
   color: red;
 `
 
-export const BigForm = ({selectedLang, Languages, CloseModal}) => {
+export const SmallerForm = ({selectedLang, Languages, CloseModal, TrainingName}) => {
   const Values = Languages.Form()[selectedLang];
   const [countryCode, setCountryCode] = useState("+420"); 
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -79,7 +79,7 @@ export const BigForm = ({selectedLang, Languages, CloseModal}) => {
   };
 
   return (
-    <StyledForm 
+    <StyledForm
       ref={(el) => {
         form.current = el;
       }}
@@ -97,25 +97,17 @@ export const BigForm = ({selectedLang, Languages, CloseModal}) => {
         <RedP>{Values[0].NameIsOnlyLetters}</RedP>
       )}
 
-      <FormP>{Values[0].TrainingChoice}</FormP>
-      <select {...register("training")} 
+      <FormP>{Values[0].ChosenTraining}</FormP>
+      <input {...register("training", 
+        { required: true, maxLength: 20, pattern: /^[A-Za-zА-Яа-яČčĎďĚěŇňŘřŠšŤťŮůŽž ]+$/i })} 
         style={{
           height: "30px",
           border: "1px solid #000",
           borderRadius: "5px",
+          paddingLeft: "5px"
         }}
-      >
-        <option>HIP-training</option>
-        <option>Pilates</option>
-        <option>Zumba</option>
-        <option>Tabata</option>
-        <option>Stretching</option>
-        <option>Power-body</option>
-        <option>{Values[0].SingleOption}</option>
-        <option>{Values[0].IDKOption}</option>
-        <option>{Values[0].OtherOption}</option>
-
-      </select>
+        value={TrainingName}
+      />
 
       <FormP>{Values[0].CountryCode}</FormP>
       <select {...register("countryCode")} 

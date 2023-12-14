@@ -1,7 +1,9 @@
-import logoSrc from "../images/logo.png"
+import logoSrc from "../images/logo.png";
+
 import styled from 'styled-components';
 import PropTypes from "prop-types";
 import { useContext } from "react";
+import {Link} from "react-router-dom";
 
 import { RightHeaderComponents } from "./RightHeaderComponent";
 
@@ -14,12 +16,16 @@ const StyledHeader = styled.div`
   flex-wrap: wrap;
 `;
 
+const StyledImg = styled.img`
+  margin: 10px;
+`
+
 export const Header = ({LocalizationComponent, LanguageContext, Languages, OpenModal}) => {
     const { selectedLang, handleLangChange } = useContext(LanguageContext);
 
     return (
         <StyledHeader>
-            <img src={logoSrc} />
+            <Link to={"/"}><StyledImg src={logoSrc} /></Link>
             <LocalizationComponent handleLangChange={handleLangChange}/>
             <RightHeaderComponents selectedLang={selectedLang} Languages={Languages} OpenModal={OpenModal}/>
         </StyledHeader>

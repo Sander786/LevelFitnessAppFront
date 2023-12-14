@@ -1,11 +1,14 @@
-import styled, { createGlobalStyle, keyframes } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
+import { useState } from "react";
+import PropTypes from "prop-types";
+import { useContext } from 'react';
+
 import { Post } from "./components/api/Post";
 import { Header } from './components/header/Header';
 import { Main } from './components/main/Main';
 import { Footer } from './components/footer/Footer';
-import PropTypes from "prop-types";
-import { useState } from "react";
 import { Modal } from './components/modal/Modal';
+import { BigForm } from './components/forms/BigForm';
 
 export const App = ({
   GetDataContext,
@@ -14,8 +17,7 @@ export const App = ({
   LocalizationComponent,
 }) => {
   const [showModal, setShowModal] = useState(false);
-
-  Post();
+  const { selectedLang } = useContext(LanguageContext);
 
   const OpenModal = () => {
     setShowModal(true)
@@ -25,7 +27,7 @@ export const App = ({
     <>
     <GlobalStyle />
     <Header LocalizationComponent={LocalizationComponent} LanguageContext={LanguageContext} Languages={Languages} OpenModal={OpenModal}/>
-    {showModal && <Modal setShowModal={setShowModal} LanguageContext={LanguageContext} Languages={Languages}/>}
+    {showModal && <Modal setShowModal={setShowModal} selectedLang={selectedLang} Languages={Languages} Form={BigForm}/>}
     <Main Languages={Languages} LanguageContext={LanguageContext} GetDataContext={GetDataContext} OpenModal={OpenModal}/>
     <Footer Languages={Languages} LanguageContext={LanguageContext}/>
     </>
@@ -45,7 +47,16 @@ const GlobalStyle = createGlobalStyle`
 *::after {
   margin: 0;
   padding: 0;
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif !important;
+}
+
+button {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-color: black;
+  border-style: none;
+  cursor: pointer;
 }
 
 ul {

@@ -8,7 +8,7 @@ export const GetDataProvider = ({ children, initialArray }) => {
 
     useEffect(() => {
       const fetchData = async () => {
-        console.log(import.meta.env.VITE_API_URL);
+        // console.log(import.meta.env.VITE_API_URL);
         try {
           const response = await fetch(`${import.meta.env.VITE_API_URL}`);
           if (!response.ok) {
@@ -16,7 +16,7 @@ export const GetDataProvider = ({ children, initialArray }) => {
           }
           const result = await response.json();
           setData(result);
-          console.log(result)
+          // console.log(result)
         } catch (error) {
           console.error('Error fetching data:', error);
         }

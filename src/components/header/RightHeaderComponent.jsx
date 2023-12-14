@@ -4,40 +4,60 @@ import PropTypes from "prop-types";
 import { Routing } from "./Routing";
 
 const PhoneNumber = styled.section`
-display: flex;
-align-items: center; 
-justify-content: space-around;
-padding: 15px; 
+  display: flex;
+  align-items: center; 
+  justify-content: space-around;
+  padding: 15px; 
 `;
 
 const PopUpButton = styled.button`
-background-color: #E7490F;
-color: #fff;
-padding: 9px 33px;
-font-size: 20px;
+  background-color: #E7490F;
+  color: #fff;
+  padding: 9px 33px;
+  font-size: 14px;
 `
 
 const TopSection = styled.section`
-display: flex;
-align-items: center; 
-flex-wrap: wrap;
-justify-content: center;
+  display: flex;
+  align-items: center; 
+  flex-wrap: wrap;
+  justify-content: center;
 `;
 
-const LowerSection = styled.ul`
-display: flex;
-align-items: center; 
-padding: 15px; 
-flex-wrap: wrap;
-justify-content: center;
+const LowerSection = styled.section`
+  display: flex;
+  align-items: center; 
+  padding: 5px; 
+  flex-wrap: wrap;
+  justify-content: center;
 `;
 
 const HowerStyles = styled.ul`
-display: flex;
-flex-direction: column;
-align-items: center; 
-padding: 15px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  padding: 15px; 
+
+  @media (max-width: 400px) {
+    padding: 0;
+  }
 `;
+
+const PhoneP = styled.p`
+  margin-left: 5px;
+  font-size: 22px;
+
+  @media (max-width: 400px) {
+    font-size: 16px;
+  }
+`;
+
+const StyledImg = styled.img`
+  border: 1px solid #fff;
+  padding: 5px;
+  border-radius: 5px;
+  margin-right: 5px;
+`
 
 export const RightHeaderComponents = ({ Languages, selectedLang, OpenModal }) => {
     const Values = Languages.HeaderText()[selectedLang];
@@ -45,8 +65,8 @@ export const RightHeaderComponents = ({ Languages, selectedLang, OpenModal }) =>
         <HowerStyles>  
             <TopSection>
                 <PhoneNumber>
-                    <img src={PhoneImg} style={{border: "1px solid #fff", padding: "5px", borderRadius: "5px", marginRight: "5px"}}/>
-                    <p style={{fontSize: "20px", marginLeft: "5px"}}>+420 606 076 187</p>
+                    <StyledImg src={PhoneImg}/>
+                    <PhoneP>+420 606 076 187</PhoneP>
                 </PhoneNumber>
                 <PopUpButton onClick={OpenModal}>{Values[0].ButtonText}</PopUpButton>
             </TopSection>
