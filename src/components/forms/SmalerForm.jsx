@@ -86,7 +86,7 @@ export const SmallerForm = ({selectedLang, Languages, CloseModal, TrainingName})
       onSubmit={handleSubmit(onSubmit)} 
     >
       <FormP>{Values[0].Name}</FormP>
-      <BasicStyledInput {...register("firstName", { required: true, maxLength: 20, pattern: /^[A-Za-zА-Яа-яČčĎďĚěŇňŘřŠšŤťŮůŽž ]+$/i })} />
+      <BasicStyledInput {...register("firstName", { required: true, maxLength: 20, pattern: /^[A-Za-zА-Яа-яČčĎďĚěŇňŘřŠšŤťŮůŽžĚěÝýÁáÍíÉé ]+$/i })} />
       {errors.firstName && errors.firstName.type === "required" && (
         <RedP>{Values[0].NameIsRequired}</RedP>
       )}
@@ -99,7 +99,7 @@ export const SmallerForm = ({selectedLang, Languages, CloseModal, TrainingName})
 
       <FormP>{Values[0].ChosenTraining}</FormP>
       <input {...register("training", 
-        { required: true, maxLength: 20, pattern: /^[A-Za-zА-Яа-яČčĎďĚěŇňŘřŠšŤťŮůŽž ]+$/i })} 
+        { required: true, maxLength: 20, pattern: /^[A-Za-zА-Яа-яČčĎďĚěŇňŘřŠšŤťŮůŽžĚěÝýÁáÍíÉé ]+$/i })} 
         style={{
           height: "30px",
           border: "1px solid #000",

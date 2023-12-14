@@ -86,7 +86,7 @@ export const BigForm = ({selectedLang, Languages, CloseModal}) => {
       onSubmit={handleSubmit(onSubmit)} 
     >
       <FormP>{Values[0].Name}</FormP>
-      <BasicStyledInput {...register("firstName", { required: true, maxLength: 20, pattern: /^[A-Za-zА-Яа-яČčĎďĚěŇňŘřŠšŤťŮůŽž ]+$/i })} />
+      <BasicStyledInput {...register("firstName", { required: true, maxLength: 20, pattern: /^[A-Za-zА-Яа-яČčĎďĚěŇňŘřŠšŤťŮůŽžĚěÝýÁáÍíÉé ]+$/i })} />
       {errors.firstName && errors.firstName.type === "required" && (
         <RedP>{Values[0].NameIsRequired}</RedP>
       )}
