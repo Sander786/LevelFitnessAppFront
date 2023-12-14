@@ -1,4 +1,5 @@
-import { LanguageProvider, LanguageContext } from "./Languageсontext";
+import { LanguageProvider, LanguageContext } from "./Languagecontext";
+
 import { GetDataProvider, GetDataContext } from "./GetDataContext";
 
 export { LanguageProvider, LanguageContext, GetDataProvider, GetDataContext };
