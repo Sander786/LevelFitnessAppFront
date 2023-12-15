@@ -3,7 +3,6 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import { useContext } from 'react';
 
-import { Post } from "./components/api/Post";
 import { Header } from './components/header/Header';
 import { Main } from './components/main/Main';
 import { Footer } from './components/footer/Footer';

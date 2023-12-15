@@ -27,4 +27,5 @@ Main.propTypes = {
     GetDataContext: PropTypes.object.isRequired,
     LanguageContext: PropTypes.object.isRequired,
     Languages: PropTypes.object.isRequired,
+    OpenModal: PropTypes.func.isRequired,
 };

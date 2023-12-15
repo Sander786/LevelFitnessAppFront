@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from "prop-types";
 
 const BackdropStyles = styled.div`
 position: fixed;
@@ -11,8 +12,11 @@ z-index: 1;
 `;
 
 export const Backdrop = ({CloseModal}) => {
-    
     return (
         <BackdropStyles onClick={CloseModal} />
     );
+};
+
+Backdrop.propTypes = {
+    CloseModal: PropTypes.func.isRequired,
 };

@@ -299,6 +299,7 @@ Programs.propTypes = {
         ExampleText: PropTypes.func.isRequired,
     }).isRequired,
     selectedLang: PropTypes.string.isRequired,
+    OpenModal: PropTypes.func.isRequired,
 };
 
 GroupProgram.propTypes = {
@@ -306,6 +307,7 @@ GroupProgram.propTypes = {
     someIndex: PropTypes.number.isRequired,
     descibing: PropTypes.string.isRequired,
     ButtonText: PropTypes.string.isRequired,
+    OpenModal: PropTypes.func.isRequired,
 };
 
 ProgramsTopSection.propTypes = {
@@ -320,4 +322,5 @@ FirstLesson.propTypes = {
         ExampleText: PropTypes.func.isRequired,
     }).isRequired,
     selectedLang: PropTypes.string.isRequired,
+    OpenModal: PropTypes.func.isRequired,
 };

@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import styled from 'styled-components';
+import PropTypes from "prop-types";
 
 const FormP = styled.p`
   margin: 10px 0;
@@ -190,4 +191,12 @@ export const BigForm = ({selectedLang, Languages, CloseModal}) => {
       <StyledSubmitInput type="submit" value={Values[0].Send} />
     </StyledForm>
   );
+};
+
+BigForm.propTypes = {
+  Languages: PropTypes.shape({
+      ExampleText: PropTypes.func.isRequired,
+  }).isRequired,
+  selectedLang: PropTypes.string.isRequired,
+  CloseModal: PropTypes.func.isRequired,
 };

@@ -339,6 +339,7 @@ MainPage.propTypes = {
         ExampleText: PropTypes.func.isRequired,
     }).isRequired,
     selectedLang: PropTypes.string.isRequired,
+    OpenModal: PropTypes.func.isRequired,
 };
 
 MainpageTopComponent.propTypes = {
@@ -348,9 +349,24 @@ MainpageTopComponent.propTypes = {
     selectedLang: PropTypes.string.isRequired,
 };
 
+MainpageAboutUsComponent.propTypes = {
+  Languages: PropTypes.shape({
+      ExampleText: PropTypes.func.isRequired,
+  }).isRequired,
+  selectedLang: PropTypes.string.isRequired,
+};
+
+MainpageAdvantagesComponent.propTypes = {
+  Languages: PropTypes.shape({
+      ExampleText: PropTypes.func.isRequired,
+  }).isRequired,
+  selectedLang: PropTypes.string.isRequired,
+};
+
 FirstLesson.propTypes = {
     Languages: PropTypes.shape({
         ExampleText: PropTypes.func.isRequired,
     }).isRequired,
     selectedLang: PropTypes.string.isRequired,
+    OpenModal: PropTypes.func.isRequired,
 };

@@ -82,4 +82,5 @@ RightHeaderComponents.propTypes = {
         ExampleText: PropTypes.func.isRequired,
     }).isRequired,
     selectedLang: PropTypes.string.isRequired,
+    OpenModal: PropTypes.func.isRequired,
 };

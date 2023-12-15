@@ -123,5 +123,7 @@ export const TrainersModal = ({Values, setShowModal, trainerImage}) => {
 };
 
 TrainersModal.propTypes = {
-    
+  trainerImage: PropTypes.string.isRequired,
+  Values: PropTypes.array.isRequired,
+  setShowModal: PropTypes.func.isRequired
 };

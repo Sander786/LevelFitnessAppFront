@@ -36,4 +36,5 @@ Header.propTypes = {
     LanguageContext: PropTypes.object.isRequired,
     LocalizationComponent: PropTypes.elementType.isRequired,
     Languages: PropTypes.object.isRequired,
+    OpenModal: PropTypes.func.isRequired,
 };

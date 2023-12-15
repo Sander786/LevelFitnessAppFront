@@ -50,7 +50,6 @@ export const Trainers = ({selectedLang, Languages, OpenModal}) => {
     const OpenTrainers1Modal = () => {
         setShowModal1(true)
     }
-
     const OpenTrainers2Modal = () => {
         setShowModal2(true)
     }
@@ -285,6 +284,7 @@ Trainers.propTypes = {
         ExampleText: PropTypes.func.isRequired,
     }).isRequired,
     selectedLang: PropTypes.string.isRequired,
+    OpenModal: PropTypes.func.isRequired,
 };
 
 
@@ -292,6 +292,7 @@ TrainerCard.propTypes = {
     name: PropTypes.string.isRequired,
     descibing: PropTypes.string.isRequired,
     trainerImage: PropTypes.string.isRequired,
+    OpenTrainersModal: PropTypes.func.isRequired,
 };
 
 TrainersTopSection.propTypes = {
@@ -306,4 +307,5 @@ FirstLesson.propTypes = {
         ExampleText: PropTypes.func.isRequired,
     }).isRequired,
     selectedLang: PropTypes.string.isRequired,
+    OpenModal: PropTypes.func.isRequired,
 };

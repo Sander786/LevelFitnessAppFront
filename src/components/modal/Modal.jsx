@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import PropTypes from "prop-types";
-import { useContext } from "react";
 import {Backdrop} from "./Backdrop";
 
 const ModalDivStyles = styled.div`
@@ -63,5 +62,11 @@ export const Modal = ({Languages, selectedLang, setShowModal, Form, TrainingName
 };
 
 Modal.propTypes = {
-    Languages: PropTypes.object.isRequired,
+  Languages: PropTypes.shape({
+    ExampleText: PropTypes.func.isRequired,
+  }).isRequired,
+  selectedLang: PropTypes.string.isRequired,
+  setShowModal: PropTypes.func.isRequired,
+  Form: PropTypes.func.isRequired,
+  TrainingName: PropTypes.string,
 };
